@@ -1,0 +1,31 @@
+{
+    "steps": [
+        {
+            "number": "1",
+            "do" : "Create a XMLHttpeRequest object",
+            "code": "let XHR = new XMLHttpRequest();"
+        },
+        {
+            "number": "2",
+            "do" : "Add eventlistner for XHR object for readystatechange event.",
+            "code": "xhr.addEventListener(\"readystatechange\", someFunction, false);",
+            "info": "Additional Info: Inside the function use XHR object properties : readyState(value 4), status (value 200), responseText to check successfull return"
+        },
+        {
+            "number": "3",
+            "do" : "Call open() method on the XHR object passing the HTTP method(GET/POST), URL for the call",
+            "code": "xhr.open(\"GET\", \"books.xml\", true);"
+        },
+        {
+            "number": "4",
+            "do" : "Call send() with a null argument to perform the AJAX call",
+            "code": "xhr.send(null);"
+        }
+    ],
+    "miscellaneous" : [
+        {
+            "head": "How to get child elements",
+            "detail": "Use the property name on JSON.parse() output"
+        }
+    ]
+}

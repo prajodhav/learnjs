@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<steps>
+   <step number="1">
+    <do>Create a XMLHttpeRequest objecct</do>
+    <code>let XHR = new XMLHttpRequest();</code>
+   </step>
+   <step number="2">
+    <do>Add eventlistner for XHR object for readystatechange event.</do>
+    <code>xhr.addEventListener("readystatechange", someFunction, false); </code>
+    <info>Additional Info: Inside the function use XHR object properties : readyState(value 4), status (value 200), responseXML to check successfull return</info>
+   </step>
+   <step number="3">
+    <do>call open() method on the XHR object passing the HTTP method(GET/POST), URL for the call</do>
+    <code>xhr.open("GET", "books.xml", true);</code>
+   </step>
+   <step number="4">
+    <do>call send() with a null argument to perform the AJAX call</do>
+    <code>xhr.send(null);</code>
+   </step>
+   <miscellaneous>
+    <head>How to get data for a specific tag</head>
+    <detail>call getElementsByTagName() method of the XHR object passing the tag name required. It returns a collection of all elements with the specified tag name. To access only the 1st element (or if only 1 element is returned) it can be accessed ysing the [0]th element of the collection</detail>
+    <code>let steps = xhr.getElementsByTagName("step"):</code>
+   </miscellaneous>
+   <miscellaneous>
+    <head>How to get child elements</head>
+    <detail>Use childNodes or children property. Both represent a collection/array. "children" only returns child elements while "childNodes" returns all child nodes.</detail>
+   </miscellaneous>
+   <miscellaneous>
+    <head>How to get attribute for a specific element</head>
+    <detail>call getAttribute() method of the XML element.</detail>
+    <code>let stepNumber = step.getAttribute("number"):</code>
+   </miscellaneous>
+   <miscellaneous>
+    <head>How to the tag name</head>
+    <detail>Use nodeNode property</detail>
+    <code>getElementsByTagName("step")[0].children[0].nodeName</code>
+   </miscellaneous>
+</steps>

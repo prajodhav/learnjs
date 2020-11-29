@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<functions>
+   <function type="Array">
+    <name>sort</name>
+    <description>Will sort the input array, optional argument is a function to decide sorting order</description>
+    <mutate_input>No</mutate_input>
+    <arguments>Opitonal</arguments>
+   </function>
+   <function type="Array">
+    <name>map</name>
+    <description>Will perform the argument function for each element of tey array and return a new array</description>
+    <mutate_input>No</mutate_input>
+    <arguments>Opitonal</arguments>
+   </function>
+   <function type="String">
+    <name>split</name>
+    <description>Will split the string into an array, optional seperator can be passed</description>
+    <mutate_input>No</mutate_input>
+    <arguments>Opitonal</arguments>
+   </function>
+   <function type="String">
+    <name>toUpperCase</name>
+    <description>Will convert string to uppercase, no arguments needed</description>
+    <mutate_input>No</mutate_input>
+    <arguments>None</arguments>
+   </function>
+</functions>

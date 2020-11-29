@@ -1,0 +1,19 @@
+{
+    "steps": [
+        {
+            "number": "1",
+            "do" : "Call jquery ajax method and pass object with url, sucess function, error function properties",
+            "code": "$.ajax({url:\"data.xml\", success:function1, error: function2});"
+        }
+    ],
+    "miscellaneous" : [
+        {
+            "head": "How to get child elements",
+            "detail": "Use the property name on output"
+        },
+        {
+            "head": "How to loop through non-JQuery object",
+            "detail": "Use $.each() method. 1st argument is the object, 2nd argument is the function to be performed for each property. Function gets two arguments key and value which can be used inside"
+        }
+    ]
+}

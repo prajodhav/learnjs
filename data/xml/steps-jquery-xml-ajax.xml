@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<steps>
+   <step number="1">
+    <do>Call jquery ajax method and pass object with url, sucess function, error function properties</do>
+    <code>$.ajax({url:"data.xml", success:function1, error: function2});</code>
+   </step>
+   <miscellaneous>
+    <head>How to get data for a specific tag</head>
+    <detail>Call find() method of the returned object and pass the tag name as argument. Returns a colleciton/array or a single object if only one is found</detail>
+    <code>let steps = $(data).find("step");</code>
+   </miscellaneous>
+   <miscellaneous>
+    <head>How to get value inside a tag</head>
+    <detail>Use text() method.</detail>
+   </miscellaneous>
+   <miscellaneous>
+    <head>How to get the tag name</head>
+    <detail>Use prop() method and pass "nodeName" as argument</detail>
+    <code>let stepNumber = step.getAttribute("number");</code>
+   </miscellaneous>
+   <miscellaneous>
+    <head>How to get child tags</head>
+    <detail>Use children() method on a JQuery object representing the parent tag</detail>
+    <code>let steps = $(this).children();</code>
+   </miscellaneous>   
+</steps>
