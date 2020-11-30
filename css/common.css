@@ -1,41 +1,53 @@
 /* Author Prajodh Aniyeri Valikat 
    CIS 5611 Fall 2020 - Individual Project  */
 
-.small-padding-top	{
-	padding-top: 10px;
+   .small-padding-top  {
+    padding-top: 10px;
 }
 .medium-padding-top {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 .small-padding-top-bottom {
-	padding-top: 10px;
-	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .list-item:nth-of-type(even) {
-	color:yellow;
+    color:yellow;
 }
 .list-item:nth-of-type(odd) {
-	color:brown;
+    color:brown;
 }
 .large-padding-top {
-	padding-top:30px;
+    padding-top:30px;
 }
 .button-100px-width {
-	width:100px;
+    width:100px;
 }
 .invissible {
-	display:none;
+    display:none;
 }
 .error {
-	color:red;
+    color:red;
 }
 .message {
-	color:white;
+    color:white;
 }
 .stick-bottom {
-	position: fixed;
-	bottom: 60px;
+    position: fixed;
+    bottom: 60px;
 }
 .bold {
-	font-weight: 600;
+    font-weight: 600;
+}
+.grid {
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #000000;
+}
+.grid > img {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
 }

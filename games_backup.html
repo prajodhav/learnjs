@@ -4,7 +4,7 @@
 <!-- CIS 5611 Fall 2020 - Individual Project -->
 
 <head>
-    <title>Ajax</title>
+    <title>Games</title>
 
     <meta charset="UTF-8">
     <meta name="description" content="Individual Project - CIS 5611">
@@ -23,7 +23,7 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Project JS LINK -->
     <script type="text/javascript" src="js/common.js"></script>
-    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/games.js"></script>
 
     <!-- Application Icon -->
     <link rel="icon" href="./images/icon.png">
@@ -57,50 +57,51 @@
     </nav>
 
     <!-- body -->
-    <div class="container-fluid">
-        <div class="row medium-padding-top">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 text-white" style="height: 90px;" id="infoBox">
-                AJAX stands for "Asynchronous Javascript And XML". &nbsp;With AJAX we can send and receive data from a server asynchronously<br/>
-                (in the background) without effecting the page &nbsp;being displayed on &nbsp;the browser. &nbsp;This allows us to change data dynamically &nbsp;on<br/>
-                the web page without reloading it entirely.
+    <div class="container-fluid medium-padding-top">
+        <button type="button" class="btn btn-primary" id="startButton">Start Game</button>
+        <div class="medium-padding-top" id="gameBoard">
+            <div>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-1" />
+                </button>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-2" />
+                </button>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-3" />
+                </button>
             </div>
-            <div class="col-md-3"></div>
-        </div>	
-        <div class="row medium-padding-top">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 bg-white text-black rounded small-padding-top-bottom">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Steps to do AJAX using &nbsp;
-                <select class="selectpicker" id="jsOrJquerySelect">
-                    <option value="JS">Vanilla JS</option>
-                    <option value="JQuery">JQuery</option>
-                </select> &nbsp;
-                along with &nbsp;
-                <select class="selectpicker" id="jsonOrXmlSelect">
-                    <option value="XML">XML</option>
-                    <option value="JSON">JSON</option>
-                </select>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input class="btn btn-dark" type="button" id="getStepsButton" value="Steps">
-                &nbsp;&nbsp;
-                <span id="moreInfoSpan"></span>
+            <div>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-4" />
+                </button>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-5" />
+                </button>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-6" />
+                </button>
             </div>
-            <div class="col-md-3"></div>
+            <div>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-7" />
+                </button>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-8" />
+                </button>
+                <button class="btn btn-default grid">
+                    <img src="" id="grid-9" />
+                </button>
+            </div>
         </div>
-        <div class="row small-padding-top">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <table id="stepsTable" class="table table-bordered table-dark">
-                </table>
-                <table id="moreTable" class="table table-bordered table-secondary">
-                </table>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
+        <br />
+        <div id="score"></div>
+        <div id="timer"></div>
+        <br />
+        <!-- <button type="button" class="btn btn-primary" id="reloadButton">Reload Game</button> -->
+
     </div>
-    </br>
+
 </body>
 
 </html>

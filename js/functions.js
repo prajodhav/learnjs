@@ -18,13 +18,16 @@ window.addEventListener("load", function() {
         }
     }, false);
     document.getElementById("nextFunctionInfoButton").addEventListener("click", function() {
-        document.getElementById("infoBox").innerHTML = functionInfo[++functionInfoIndex];
+        if (functionInfoIndex < (functionInfo.length - 1)) {
+            document.getElementById("infoBox").innerHTML = functionInfo[++functionInfoIndex];
+        }
     }, false);
     loadFunctionTypeList();
     document.getElementById("functionTypesSelect").addEventListener("change", function() {
         document.getElementById("selectFunctionSpan").innerHTML = "";
         document.getElementById("functionDetailsTable").innerHTML = ""
         document.getElementById("functionTryoutInputDiv").innerHTML = "";
+        document.getElementById("functionTryoutOutputDiv").innerHTML = "";
         if (document.getElementById("functionTypesSelect").value != "") {
             loadFunctionList(document.getElementById("functionTypesSelect").value);
         }
@@ -77,6 +80,7 @@ function loadFunctionList() {
     document.getElementById("functionSelect").addEventListener("change", function(evt) {
         document.getElementById("functionDetailsTable").innerHTML = "";
         document.getElementById("functionTryoutInputDiv").innerHTML = "";
+        document.getElementById("functionTryoutOutputDiv").innerHTML = "";
         if (evt.target.value != "") {
             displayFunctionDetails(evt.target.value);
         }
@@ -161,12 +165,12 @@ function runFunction() {
         try {
             let output = eval (fnExecution);
             console.log("output : " + output);
-            document.getElementById("functionTryoutOutputDiv").innerHTML = "Output:&nbsp;&nbsp;" + output;    
+            document.getElementById("functionTryoutOutputDiv").innerHTML = "<h3 class=\"text-white\">" + "Output:&nbsp;&nbsp;" + output + "</h3>";    
         } catch (e) {
-            document.getElementById("functionTryoutOutputDiv").innerHTML = "Error:" + e.message;    
+            document.getElementById("functionTryoutOutputDiv").innerHTML = "<h3 class=\"text-danger\">" + "Error:&nbsp;&nbsp;" + e.message + "</h3>";    
         }
     } else {
-        document.getElementById("functionTryoutOutputDiv").innerHTML = "Error: No input entered!"
+        document.getElementById("functionTryoutOutputDiv").innerHTML = "<h3 class=\"text-danger\">Error:&nbsp;&nbsp;No input entered!</h3>"
     }
 
 
