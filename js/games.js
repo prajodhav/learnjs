@@ -11,6 +11,11 @@ let duration = 0;
 window.addEventListener("load", function () {
     setActiveOnNavBar(04);
     setDefaultImages();
+    document.body.addEventListener("click", function (evt) {
+        if (gameStarted && evt.target && evt.target.src && !evt.target.src.includes('jpg')) {
+            endGame();
+        }
+    })
     document.getElementById("gameBoard").addEventListener("click", function (evt) {
         if (gameStarted) {
             if (evt.target.src && evt.target.src.includes('click.jpg')) {
