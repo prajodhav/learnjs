@@ -11,18 +11,24 @@ let duration = 0;
 window.addEventListener("load", function () {
     setActiveOnNavBar(04);
     setDefaultImages();
+
     document.body.addEventListener("click", function (evt) {
-        if (gameStarted && evt.target && evt.target.src && !evt.target.src.includes('jpg')) {
+        console.log(evt.target);
+        if (gameStarted && evt.target &&
+            (!evt.target.src ||
+                (evt.target.src && !evt.target.src.includes('jpg')))) {
+            console.log('Clicked outside: ' + evt.target.src);
             endGame();
         }
     })
     document.getElementById("gameBoard").addEventListener("click", function (evt) {
         if (gameStarted) {
+            console.log(evt.target.src);
             if (evt.target.src && evt.target.src.includes('click.jpg')) {
                 hits++;
+                imageJumps = 0;
                 document.getElementById("score").innerHTML = "Score: " + hits;
                 clearInterval(gameInterval);
-                //currentImageLoadInterval -= imageReloadIntervalChange;
                 currentImageLoadInterval = Math.floor(currentImageLoadInterval * imageReloadIntervalChange);
                 console.log(" interval : " + currentImageLoadInterval);
                 loadGame();
@@ -32,7 +38,7 @@ window.addEventListener("load", function () {
         }
     }, false);
 
-    document.getElementById("startButton").addEventListener("click", function () {
+    document.getElementById("startButton").addEventListener("click", function (evt) {
         gameStarted = true;
         document.getElementById("timer").style.visibility = "visible";
         document.getElementById("score").style.visibility = "visible";
@@ -40,6 +46,7 @@ window.addEventListener("load", function () {
         document.getElementById("score").innerHTML = "Score: " + hits;
         startGameTimer();
         loadGame();
+        evt.stopPropagation();
     }, false);
 
 }, false);
@@ -70,7 +77,7 @@ function loadGame() {
     gameInterval = setInterval(function () {
         if (imageJumps < 3) {
             setDefaultImages();
-            setClickMeImage();    
+            setClickMeImage();
         } else {
             endGame();
         }
@@ -81,7 +88,7 @@ function startGameTimer() {
     let gameStartTime = new Date().getTime();
     let currentTime = new Date().getTime();
     duration = (currentTime - gameStartTime) / 1000;
-    document.getElementById("timer").innerHTML = "Active play time: " + duration  + "secs";
+    document.getElementById("timer").innerHTML = "Active play time: " + duration + "secs";
     timeInterval = setInterval(function () {
         let currentTime = new Date().getTime();
         duration = ((currentTime - gameStartTime) / 1000).toFixed(0);
